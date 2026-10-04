@@ -1,0 +1,6 @@
+{
+  "name": "AlphaFloor",
+  "description": "رادار هوشمند کف و سقف بازار کریپتو و تنظیمات اعتبارسنجی الگوریتم و هشدارها",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
