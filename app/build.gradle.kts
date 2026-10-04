@@ -22,30 +22,18 @@ android {
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
-  signingConfigs {
-    create("release") {
-      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/my-upload-key.jks"
-      storeFile = file(keystorePath)
-      storePassword = System.getenv("STORE_PASSWORD")
-      keyAlias = "upload"
-      keyPassword = System.getenv("KEY_PASSWORD")
-    }
-    create("debugConfig") {
-      storeFile = file("${rootDir}/debug.keystore")
-      storePassword = "android"
-      keyAlias = "androiddebugkey"
-      keyPassword = "android"
-    }
-  }
+  // بخش signingConfigs کاملاً حذف شد تا از کلید پیش‌فرض خود اندروید استفاده شود
 
   buildTypes {
     release {
       isCrunchPngs = false
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-      signingConfig = signingConfigs.getByName("release")
+      // خط signingConfig حذف شد
     }
-    debug { signingConfig = signingConfigs.getByName("debugConfig") }
+    debug {
+      // خط signingConfig حذف شد تا از کلید دیباگ پیش‌فرض استفاده کند
+    }
   }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
